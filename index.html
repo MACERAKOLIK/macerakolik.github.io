@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gökhan Oral - Projeler ve Oyunlar</title>
+    <style>
+        /* Temel Ayarlar */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Üst Bilgi (Header) Tasarımı */
+        header {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #bdc3c7;
+        }
+
+        /* Ana İçerik Alanı */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        /* Bölüm Tasarımları */
+        .section {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        /* Buton Tasarımı */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            margin-top: 15px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Oyunlar Izgarası (Grid) */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .game-card {
+            border: 1px solid #e0e0e0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #fafafa;
+        }
+        .game-card h3 {
+            margin-top: 0;
+            color: #34495e;
+        }
+
+        /* Alt Bilgi (Footer) */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Üst Başlık Kısmı -->
+    <header>
+        <h1>Gökhan Oral</h1>
+        <p>Bağımsız Oyun Geliştiricisi & Blok Yazarı</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Oyunlarım Bölümü -->
+        <section class="section">
+            <h2>Oyunlarım</h2>
+            <p>Geliştirdiğim web tabanlı oyunlara aşağıdan ulaşabilirsiniz.</p>
+            
+            <div class="games-grid">
+                <!-- 1. Oyun Kartı -->
+                <div class="game-card">
+                    <h3>Hücre Evrimi</h3>
+                    <p>Hücrelerin evrimsel sürecini yönettiğiniz strateji odaklı ilk projem.</p>
+                    <!-- İleride oyunun klasörünü GitHub'a yüklediğinde "#" işaretini "/hucre-evrimi" ile değiştirebilirsin -->
+                    <a href="#" class="btn">Yakında Burada</a>
+                </div>
+
+                <!-- 2. Oyun Kartı -->
+                <div class="game-card">
+                    <h3>Gizemli Proje</h3>
+                    <p>Yeni oyunum şu anda geliştirme aşamasında. Detaylar için beklemede kalın!</p>
+                    <a href="#" class="btn" style="background-color: #95a5a6;">Geliştiriliyor</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mitoloji Blogu Bölümü -->
+        <section class="section">
+            <h2>Mitoloji Blogum</h2>
+            <p>Oyun geliştirmenin yanı sıra antik çağlar, tanrılar ve efsaneler üzerine araştırmalar yapıyor ve yazılar yazıyorum. Mitolojik dünyalara ilgi duyuyorsanız bloguma göz atabilirsiniz.</p>
+            <a href="https://mythologicalworldgods.blogspot.com" target="_blank" class="btn">Blogu Ziyaret Et (Yeni Sekme)</a>
+        </section>
+
+    </div>
+
+    <!-- En Alt Bilgi -->
+    <footer>
+        <p>© 2026 Gökhan Oral. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>
