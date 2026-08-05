@@ -21,12 +21,6 @@
 }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0d1117; color: #c9d1d9; margin: 0; display: flex; height: 100vh; overflow: hidden; }
 
-        #baslangic-ekrani { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(13, 17, 23, 0.95); backdrop-filter: blur(15px); z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .basla-btn { background: linear-gradient(90deg, #2ea043, #3fb950); color: white; border: 2px solid #4ade80; padding: 20px 50px; font-size: 28px; font-weight: bold; border-radius: 15px; cursor: pointer; box-shadow: 0 0 30px rgba(46, 160, 67, 0.5); transition: transform 0.2s, box-shadow 0.2s; animation: kalpAtisi 1.5s infinite alternate; margin-top: 30px; }
-        .basla-btn:hover { transform: scale(1.1); box-shadow: 0 0 50px rgba(46, 160, 67, 0.9); }
-        @keyframes kalpAtisi { from { transform: scale(1); } to { transform: scale(1.05); } }
-        .baslik-logo { font-size: 60px; color: #58a6ff; text-shadow: 0 0 30px rgba(88, 166, 255, 0.8); margin-bottom: 10px; text-align: center;}
-
         #sol-panel {
             flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden;
             background: linear-gradient(45deg, #050117, #190934, #0a1128, #050117);
@@ -215,17 +209,6 @@
 <body>
 
 <div id="beyaz-parlama" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background-color:white; z-index:10000; pointer-events:none;"></div>
-
-<div id="baslangic-ekrani">
-    <!-- Kendi logonu buraya ekledik -->
-    <img src="yeni_logo.jpeg" style="width: 150px; margin-bottom: 15px; border-radius: 20px;">
-
-    <!-- Uzay emojisini başlıktan sildik -->
-    <h1 class="baslik-logo">Hücre Evrimi</h1>
-
-    <p style="color: #c9d1d9; font-size: 18px; margin-bottom: 20px;">Evreni fethetmeye hazır mısın?</p>
-    <button class="basla-btn" onclick="oyunuBaslat()">🎮 Oyuna Başla</button>
-</div>
 
 <div id="sol-panel">
     <div id="uc-boyut-sahnesi"></div>
@@ -507,7 +490,15 @@
     }
     function anlikSesOynat(tur) { if (!sesAcik) return; sesMotorunuBaslat(); if (tur === "ses-tiklama") { atariSesiUret(400, 'square', 0.1); } else if (tur === "ses-avantaj") { atariSesiUret(800, 'sine', 0.1); setTimeout(() => atariSesiUret(1200, 'sine', 0.2), 100); } else if (tur === "ses-hasar") { atariSesiUret(150, 'sawtooth', 0.4); setTimeout(() => atariSesiUret(100, 'sawtooth', 0.4), 200); } }
 
-    function oyunuBaslat() { document.getElementById("baslangic-ekrani").style.display = "none"; sesMotorunuBaslat(); sesAcik = true; arkaPlanMuziginiBaslat(); let btnSes = document.getElementById("btn-ses-kontrol"); btnSes.innerHTML = "🔊 Oyunun Sesi Açık (Kapatmak için tıkla)"; btnSes.classList.add("ses-buton-aktif"); }
+    function oyunuBaslat() {
+        sesMotorunuBaslat();
+        sesAcik = true;
+        arkaPlanMuziginiBaslat();
+        let btnSes = document.getElementById("btn-ses-kontrol");
+        btnSes.innerHTML = "🔊 Oyunun Sesi Açık (Kapatmak için tıkla)";
+        btnSes.classList.add("ses-buton-aktif");
+    }
+    
     function sesiAcKapat() { sesMotorunuBaslat(); let btnSes = document.getElementById("btn-ses-kontrol"); if (sesAcik) { sesAcik = false; arkaPlanMuziginiDurdur(); btnSes.innerHTML = "🔇 Oyunu Sessizde Oynuyorsun (Sesi Aç)"; btnSes.classList.remove("ses-buton-aktif"); } else { sesAcik = true; arkaPlanMuziginiBaslat(); btnSes.innerHTML = "🔊 Oyunun Sesi Açık (Kapatmak için tıkla)"; btnSes.classList.add("ses-buton-aktif"); } }
 
     function formatla(sayi) {
@@ -1426,6 +1417,7 @@
     }, 100);
 
     setInterval(kaydet, 5000);
+    oyunuBaslat();
     yukle(); ekraniGuncelle(); gezegenArayuzunuGuncelle(); asamaArayuzunuGuncelle(); kozmetikArayuzunuGuncelle(); ciftlikArayuzunuGuncelle(); baslatHareketDongusu();
 </script>
 </body>
