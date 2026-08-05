@@ -5,126 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gökhan Oral - Projeler ve Oyunlar</title>
     <style>
-        /* Temel Ayarlar */
+        /* --- Temel Ayarlar --- */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #fdf6e3;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdfaf0; /* Sitedeki krem arka plan rengi */
+            color: #4a4a4a;
             line-height: 1.6;
         }
 
-        /* Üst Bilgi (Header) Tasarımı - Renkli Gradyan */
+        /* --- Üst Kısım (Header) --- */
         header {
-            background: linear-gradient(135deg, #1a252f 0%, #c0a080 100%);
-            color: #eee8d5;
-            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #2b2b2b, #4a4a4a);
+            color: #f2f2f2;
             text-align: center;
+            padding: 70px 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            font-size: 42px;
+            letter-spacing: 1px;
         }
         header p {
             margin-top: 10px;
-            font-size: 1.2rem;
-            color: #bdc3c7;
+            font-size: 20px;
+            color: #cfcfcf;
         }
 
-        /* Ana İçerik Alanı */
+        /* --- Ana İçerik --- */
         .container {
             max-width: 900px;
-            margin: 2rem auto;
+            margin: 40px auto;
             padding: 0 20px;
         }
 
-        /* Bölüm Tasarımları */
-        .section {
-            background: #fffff0;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
-        }
-        .section h2 {
-            color: #21618c;
-            border-bottom: 3px solid #2ecc71;
+        /* Başlıklar */
+        h2.section-title {
+            color: #2b6a84;
+            border-bottom: 2px solid #5cb85c;
             padding-bottom: 10px;
-            margin-top: 0;
+            margin-bottom: 15px;
         }
 
-        /* Buton Tasarımı */
+        /* --- Oyun Kartları --- */
+        .grid {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 60px;
+            margin-top: 30px;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 25px;
+            flex: 1;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.03);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            color: #5cb85c; /* Hücre Evrimi başlık rengi */
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .card h3.gizemli {
+            color: #888;
+        }
+        .card p {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 25px;
+            min-height: 50px;
+        }
+
+        /* --- Buton Tasarımları --- */
         .btn {
             display: inline-block;
-            padding: 12px 24px;
-            background-color: #2980b9;
+            background-color: #2b7bb9;
             color: white;
+            padding: 12px 24px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: all 0.3s ease;
-            margin-top: 15px;
+            font-size: 16px;
+            transition: background 0.3s ease;
         }
         .btn:hover {
-            background-color: #1f6391;
-            transform: scale(1.05);
+            background-color: #1f5f92;
+        }
+        .btn-disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+            pointer-events: none; /* Tıklamayı engeller */
+        }
+        .btn-alt {
+            background-color: #c08752; /* Mitoloji blogu buton rengi */
+        }
+        .btn-alt:hover {
+            background-color: #a37041;
         }
 
-        /* Oyunlar Izgarası (Grid) */
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+        /* --- Mitoloji Blogum Bölümü --- */
+        .blog-section {
+            background: #fdf3e1;
+            padding: 35px;
+            border-radius: 10px;
+            border: 1px solid #ebd8be;
+            margin-bottom: 50px;
         }
-        .game-card {
-            border: 1px solid #e0e0e0;
-            padding: 1.5rem;
+        .blog-section h2 {
+            color: #b7791f;
+            border-bottom: 2px solid #c08752;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .blog-banner {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
             border-radius: 8px;
-            text-align: center;
-            background-color: #fffff0;
-            transition: box-shadow 0.3s ease;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        .game-card:hover {
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
-        .game-card.hucre-evrimi h3 {
-            color: #2ecc71;
-        }
-        .game-card.gizemli-proje h3 {
-            color: #7f8c8d;
+        .blog-section p {
+            font-size: 16px;
+            margin-bottom: 25px;
         }
 
-        /* Mitoloji Bloğu Bölümü - Özel Stil */
-        .section.mitoloji {
-            background: #fff8e7;
-        }
-        .section.mitoloji h2 {
-            color: #cd7f32;
-            border-bottom-color: #c0a080;
-        }
-        .section.mitoloji .btn {
-            background: linear-gradient(135deg, #c0a080 0%, #cd7f32 100%);
-        }
-        .section.mitoloji .btn:hover {
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
-
-        /* Alt Bilgi (Footer) */
+        /* --- Alt Kısım (Footer) --- */
         footer {
             text-align: center;
-            padding: 2rem;
-            color: #7f8c8d;
-            font-size: 0.9rem;
+            padding: 25px;
+            font-size: 14px;
+            color: #999;
         }
     </style>
 </head>
 <body>
 
-    <!-- Üst Başlık Kısmı -->
     <header>
         <h1>Gökhan Oral</h1>
         <p>Bağımsız Oyun Geliştiricisi & Blok Yazarı</p>
@@ -132,42 +157,47 @@
 
     <div class="container">
         
-        <!-- Oyunlarım Bölümü -->
-        <section class="section">
-            <h2>Oyunlarım</h2>
-            <p>Geliştirdiğim web tabanlı oyunlara aşağıdan ulaşabilirsiniz.</p>
-            
-            <div class="games-grid">
-                
-                <!-- 1. Oyun Kartı -->
-                <div class="game-card hucre-evrimi">
-                    <img src="yeni_logo.jpeg" alt="Hücre Evrimi Logosu" style="width: 100%; max-width: 200px; border-radius: 8px; margin-bottom: 15px;">
-                    <h3>Hücre Evrimi</h3>
-                    <p>Hücrelerin evrimsel sürecini yönettiğiniz strateji odaklı ilk projem.</p>
-                    <a href="hucre-evrimi/index.html" target="_blank" class="btn">Oyunu Oyna</a>
-                </div>
-                
-                <!-- 2. Oyun Kartı -->
-                <div class="game-card gizemli-proje">
-                    <h3>Gizemli Proje</h3>
-                    <p>Yeni oyunum şu anda geliştirme aşamasında. Detaylar için beklemede kalın!</p>
-                    <a href="#" class="btn" style="background-color: #95a5a6;">Geliştiriliyor</a>
-                </div>
-            </div>
-        </section>
+        <!-- ================= OYUNLARIM BÖLÜMÜ ================= -->
+        <h2 class="section-title">Oyunlarım</h2>
+        <p>Geliştirdiğim web tabanlı oyunlara aşağıdan ulaşabilirsiniz.</p>
 
-        <!-- Mitoloji Blogu Bölümü - Özel Stil Uygulandı -->
-        <section class="section mitoloji">
+        <div class="grid">
+            <!-- Hücre Evrimi -->
+            <div class="card">
+                <!-- Eğer logonun ismi farklıysa 'yeni_logo.jpeg' kısmını değiştirebilirsin -->
+                <img src="yeni_logo.jpeg" alt="Hücre Evrimi">
+                <h3>Hücre Evrimi</h3>
+                <p>Hücrelerin evrimsel sürecini yönettiğiniz strateji odaklı ilk projem.</p>
+                <!-- DOĞRU ÇALIŞAN OYUN BUTONU -->
+                <a href="hucre-evrimi/index.html" target="_blank" class="btn">Oyunu Oyna</a>
+            </div>
+
+            <!-- Gizemli Proje -->
+            <div class="card">
+                <div style="height: 200px; display: flex; align-items: center; justify-content: center; background: #eef2f5; border-radius: 8px; margin-bottom: 20px; color: #a0aec0;">Gizemli Proje Görseli</div>
+                <h3 class="gizemli">Gizemli Proje</h3>
+                <p>Yeni oyunum şu anda geliştirme aşamasında. Detaylar için beklemede kalın!</p>
+                <a href="#" class="btn btn-disabled">Geliştiriliyor</a>
+            </div>
+        </div>
+
+        <!-- ================= MİTOLOJİ BLOGUM BÖLÜMÜ ================= -->
+        <div class="blog-section">
             <h2>Mitoloji Blogum</h2>
+            
+            <!-- KAYBOLAN BANNER BURAYA EKLENDİ (Büyük/Küçük harfe duyarlı tam ismiyle) -->
+            <img src="M.B.banner.jpeg" alt="Mitoloji Blogum Bannerı" class="blog-banner">
+            
             <p>Oyun geliştirmenin yanı sıra antik çağlar, tanrılar ve efsaneler üzerine araştırmalar yapıyor ve yazılar yazıyorum. Mitolojik dünyalara ilgi duyuyorsanız bloguma göz atabilirsiniz.</p>
-            <a href="https://mythologicalworldgods.blogspot.com" target="_blank" class="btn">Blogu Ziyaret Et (Yeni Sekme)</a>
-        </section>
+            
+            <!-- Eğer mitoloji blogunun linki varsa, aşağıdaki href="#" kısmındaki # yerine linki yapıştırabilirsin -->
+            <a href="#" target="_blank" class="btn btn-alt">Blogu Ziyaret Et (Yeni Sekme)</a>
+        </div>
 
     </div>
 
-    <!-- En Alt Bilgi -->
     <footer>
-        <p>© 2026 Gökhan Oral. Tüm hakları saklıdır.</p>
+        &copy; 2026 Gökhan Oral. Tüm hakları saklıdır.
     </footer>
 
 </body>
