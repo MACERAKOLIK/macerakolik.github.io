@@ -10,21 +10,23 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
+            background-color: #fdf6e3;
             color: #333;
             line-height: 1.6;
         }
 
-        /* Üst Bilgi (Header) Tasarımı */
+        /* Üst Bilgi (Header) Tasarımı - Renkli Gradyan */
         header {
-            background-color: #2c3e50;
-            color: #ffffff;
+            background: linear-gradient(135deg, #1a252f 0%, #c0a080 100%);
+            color: #eee8d5;
             padding: 3rem 1rem;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         header h1 {
             margin: 0;
             font-size: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         header p {
             margin-top: 10px;
@@ -41,15 +43,15 @@
 
         /* Bölüm Tasarımları */
         .section {
-            background: #ffffff;
+            background: #fffff0;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             margin-bottom: 2rem;
         }
         .section h2 {
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: #21618c;
+            border-bottom: 3px solid #2ecc71;
             padding-bottom: 10px;
             margin-top: 0;
         }
@@ -58,16 +60,17 @@
         .btn {
             display: inline-block;
             padding: 12px 24px;
-            background-color: #3498db;
+            background-color: #2980b9;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
             margin-top: 15px;
         }
         .btn:hover {
-            background-color: #2980b9;
+            background-color: #1f6391;
+            transform: scale(1.05);
         }
 
         /* Oyunlar Izgarası (Grid) */
@@ -82,11 +85,32 @@
             padding: 1.5rem;
             border-radius: 8px;
             text-align: center;
-            background-color: #fafafa;
+            background-color: #fffff0;
+            transition: box-shadow 0.3s ease;
         }
-        .game-card h3 {
-            margin-top: 0;
-            color: #34495e;
+        .game-card:hover {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .game-card.hucre-evrimi h3 {
+            color: #2ecc71;
+        }
+        .game-card.gizemli-proje h3 {
+            color: #7f8c8d;
+        }
+
+        /* Mitoloji Bloğu Bölümü - Özel Stil */
+        .section.mitoloji {
+            background: #fff8e7;
+        }
+        .section.mitoloji h2 {
+            color: #cd7f32;
+            border-bottom-color: #c0a080;
+        }
+        .section.mitoloji .btn {
+            background: linear-gradient(135deg, #c0a080 0%, #cd7f32 100%);
+        }
+        .section.mitoloji .btn:hover {
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
         /* Alt Bilgi (Footer) */
@@ -115,15 +139,14 @@
             
             <div class="games-grid">
                 <!-- 1. Oyun Kartı -->
-                <div class="game-card">
+                <div class="game-card hucre-evrimi">
                     <h3>Hücre Evrimi</h3>
                     <p>Hücrelerin evrimsel sürecini yönettiğiniz strateji odaklı ilk projem.</p>
-                    <!-- İleride oyunun klasörünü GitHub'a yüklediğinde "#" işaretini "/hucre-evrimi" ile değiştirebilirsin -->
                     <a href="#" class="btn">Yakında Burada</a>
                 </div>
 
                 <!-- 2. Oyun Kartı -->
-                <div class="game-card">
+                <div class="game-card gizemli-proje">
                     <h3>Gizemli Proje</h3>
                     <p>Yeni oyunum şu anda geliştirme aşamasında. Detaylar için beklemede kalın!</p>
                     <a href="#" class="btn" style="background-color: #95a5a6;">Geliştiriliyor</a>
@@ -131,8 +154,8 @@
             </div>
         </section>
 
-        <!-- Mitoloji Blogu Bölümü -->
-        <section class="section">
+        <!-- Mitoloji Blogu Bölümü - Özel Stil Uygulandı -->
+        <section class="section mitoloji">
             <h2>Mitoloji Blogum</h2>
             <p>Oyun geliştirmenin yanı sıra antik çağlar, tanrılar ve efsaneler üzerine araştırmalar yapıyor ve yazılar yazıyorum. Mitolojik dünyalara ilgi duyuyorsanız bloguma göz atabilirsiniz.</p>
             <a href="https://mythologicalworldgods.blogspot.com" target="_blank" class="btn">Blogu Ziyaret Et (Yeni Sekme)</a>
